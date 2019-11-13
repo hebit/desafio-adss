@@ -17,8 +17,8 @@ const Header: React.FC = () => {
                 <span></span>
             </MenuContainer>
             <ContentContainer>
-                <img className="plus-icon" src={plusIcon} />
-                <img src={filingIcon} />
+                <img className="plus-icon" src={plusIcon} alt="icone de mais" />
+                <img src={filingIcon} alt="icone de filing" />
                 <Title size={18} align="start">Simulacao <br />de Taxas</Title>
             </ContentContainer>
         </>

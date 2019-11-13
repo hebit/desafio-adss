@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Container from '../Container'
 
 export const MenuContainer = styled.header`
     background-color: #228A95;

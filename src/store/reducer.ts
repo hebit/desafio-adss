@@ -8,8 +8,8 @@ const INITIAL_STATE : rootState = {
 interface Action {
     type: string
     payload: {
-        user?: User | null
-        table?: Table | null
+        user?: User
+        table?: Table
     }
 }
 

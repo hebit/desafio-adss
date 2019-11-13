@@ -1,11 +1,16 @@
 import React from 'react'
-
-const SelectUser: React.FC = () => {
+import Container from '../../components/Container'
+import Row from '../../components/Row'
+import Title from '../../components/Title'
+import Button from '../../components/Button'
+import { InputWithButton } from 'components/Input'
+export const SelectUser: React.FC = () => {
     return (
-        <div>
-            SelectUser
-        </div>
+        <Container>
+            <Title>Valor desejado</Title>
+            <Row>
+                <InputWithButton value={'5'} to="/overview" />
+            </Row>
+        </Container>
     )
 }
-
-export default SelectUser;
