@@ -3,7 +3,8 @@ import Container from '../../components/Container'
 import Row from '../../components/Row'
 import Title from '../../components/Title'
 import Button from '../../components/Button'
-import { Input } from 'components/Input'
+import Input from 'components/Input'
+import Table from 'components/Table'
 // import { useDispatch } from 'react-redux'
 
 
@@ -20,6 +21,7 @@ export const Simulacao: React.FC = () => {
                 <Input value={inputValue} />
                 <Button to="/selectUser" onClick={() => {}} >Calcular</Button>
             </Row>
+            <Table />
         </Container>
     )
 }
