@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Footer from './components/Footer'
 import {
   Simulacao,
   SelectUser,
@@ -23,10 +22,10 @@ const App: React.FC = () => {
           <Route path='/selectUser' component={SelectUser} />
           <Route path='/overview' component={Overview} />
           <Route path='/finish' component={Finish} />
+          <Route path='/details' component={Details} />
           <Route path='/details/:id' component={Details} />
         </Switch>
       </Router>
-      <Footer />
     </div>
   );
 }

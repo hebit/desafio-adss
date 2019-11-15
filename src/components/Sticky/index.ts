@@ -7,7 +7,7 @@ const Sticky = styled(Row)`
         margin: 0;
     }
 
-    a {
+    button {
         border-radius: 0 5px 5px 0;
         margin: 0;
         height: 100%;

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors } from 'styles'
 import Title from "../Title";
-import Button from 'components/Button';
+import LinkButton from 'components/LinkButton';
 
 const CardTitle = styled(Title)`
     color: ${colors.darkGray};
@@ -45,6 +45,7 @@ interface Props {
     cpf?: string
     name?: string
     id?: number
+    children?: any
 }
 
 const Card = ({ cpf , name , id }: Props) => {
@@ -53,7 +54,7 @@ const Card = ({ cpf , name , id }: Props) => {
             <CardTitle>Cliente Encontrado</CardTitle>
             <CardCPF>192.023.075-88</CardCPF>
             <CardName>Jusara Marina Azevedo</CardName>
-            <Button color="green" to="/overview">Solicitar</Button>
+            <LinkButton color="green" to="/overview">Solicitar</LinkButton>
         </Container>
     )
 }

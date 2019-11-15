@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { colors } from 'styles'
 
-const Button = styled(Link)`
+const LinkButton = styled(Link)`
     height: 32px;
     padding: 4px 12px;
     background-color: ${props => !!props.color && props.color === 'green' ? colors.green : colors.orange };
@@ -10,8 +10,10 @@ const Button = styled(Link)`
     align-self: center;
     margin: 0 12px;
     color: ${colors.white};
-    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
 `
 
-export default Button
+export default LinkButton

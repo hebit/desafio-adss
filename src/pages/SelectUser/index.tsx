@@ -8,13 +8,15 @@ import Sticky from 'components/Sticky'
 import Card from 'components/Card'
 export const SelectUser: React.FC = () => {
     const [inputValue, setInputValue] = useState('0')
+    setInputValue("test")
+    console.log(inputValue)
     return (
         <Container>
             <Title>Valor desejado</Title>
             <Row>
                 <Sticky>
-                    <Input value={inputValue} />
-                    <Button to="/overview" color="green" >Continuar</Button>
+                    <Input value={"inputValue"} />
+                    <Button color="green" >Continuar</Button>
                 </Sticky>
             </Row>
             <Card />
