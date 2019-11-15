@@ -8,7 +8,9 @@ import Sticky from 'components/Sticky'
 import Card from 'components/Card'
 export const SelectUser: React.FC = () => {
     const [inputValue, setInputValue] = useState('0')
-    setInputValue("test")
+    if(false){
+        setInputValue("test")
+    }
     console.log(inputValue)
     return (
         <Container>

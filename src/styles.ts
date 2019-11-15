@@ -6,6 +6,7 @@ interface Colors {
     green: string
     orange: string
     selectedGreen: string
+    red: string
 }
 
 export const colors : Colors = {
@@ -16,4 +17,5 @@ export const colors : Colors = {
     green: '#0D8A94',
     orange: '#F29B59',
     selectedGreen: '#E7FFE6',
+    red: '#BC3434'
 }

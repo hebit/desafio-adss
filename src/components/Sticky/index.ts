@@ -8,9 +8,9 @@ const Sticky = styled(Row)`
     }
 
     button {
+        height: 47px;
         border-radius: 0 5px 5px 0;
         margin: 0;
-        height: 100%;
         box-sizing: border-box;
         display: flex;
         align-items: center;

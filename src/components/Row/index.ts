@@ -6,6 +6,7 @@ const Row = styled(Container)`
     flex-direction: row;
     margin: 8px;
     justify-content: center;
+    align-items: center;
 `
 
 export default Row
