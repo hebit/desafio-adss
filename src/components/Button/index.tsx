@@ -12,13 +12,16 @@ const Button = styled.button`
     align-self: center;
     margin: 0 12px;
     color: ${colors.white};
-    // line-height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-style: none;
     text-decoration: none;
+    font-weight: bold;
 
+    :hover {
+        cursor: pointer;
+    }
 
     * {
         margin: 0 4px;

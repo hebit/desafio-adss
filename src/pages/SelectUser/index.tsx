@@ -6,16 +6,17 @@ import Button from '../../components/Button'
 import Input from 'components/Input'
 import Sticky from 'components/Sticky'
 import UserCard from 'components/UserCard'
-import { useSelector, useDispatch } from 'react-redux';
-import { rootState, User } from 'store/types';
+import { useSelector, useDispatch } from 'react-redux'
+import { rootState, User } from 'store/types'
 import api from 'api'
 //@ts-ignore
-import formatCpf from '@brazilian-utils/format-cpf';
+import formatCpf from '@brazilian-utils/format-cpf'
 
 export const SelectUser: React.FC = () => {
-    console.log('page:selectUser')
+
+    const user = useSelector((state : rootState) => state.user)
     const [inputValue, setInputValue] = useState('')
-    const [selectedUser, setSelectedUser] = useState<User|null>(null)
+    const [selectedUser, setSelectedUser] = useState<User|undefined|null>(user)
     const dispatch = useDispatch()
     
     useEffect(() => {
@@ -29,17 +30,17 @@ export const SelectUser: React.FC = () => {
         setSelectedUser(user)
     }
 
-    const state = useSelector((state : rootState) => state)
-    // console.log('globa:state',state)
-    // console.log('selected:user', selectedUser)
-
     return (
         <Container>
             <Title>Valor desejado</Title>
             <Row>
                 <Sticky>
-                    <Input value={inputValue} onChange={(value : string) => setInputValue(formatCpf(value)) } />
-                    <Button color="green" onClick={getUser}>Continuar</Button>
+                    <Input 
+                        value={inputValue} 
+                        onChange={(value : string) => setInputValue(formatCpf(value)) }
+                        placeholder="CPF"
+                    />
+                    <Button color="green" onClick={getUser}>Buscar</Button>
                 </Sticky>
             </Row>
             {!!selectedUser && <UserCard user={selectedUser} />}

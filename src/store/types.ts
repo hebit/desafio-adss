@@ -1,6 +1,7 @@
 export interface rootState {
-    user: User | null | undefined
-    table: Table | null | undefined
+    user?: User | null 
+    table?: Table | null 
+    installment?: Installment | null
 }
 
 export interface Table {

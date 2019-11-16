@@ -1,15 +1,21 @@
 import styled from 'styled-components'
 import Row from '../Row'
+import { colors } from 'styles'
 const Sticky = styled(Row)`
     width: 310px;
     input {
-        border-radius: 5px 0 0 5px;
+        border-radius: 3px 0 0 3px;
         margin: 0;
+        background-color: ${colors.white};
+        border: 2px solid ${colors.gray};
+    }
+
+    & > * {
+        height: 40px;
     }
 
     button {
-        height: 47px;
-        border-radius: 0 5px 5px 0;
+        border-radius: 0 3px 3px 0;
         margin: 0;
         box-sizing: border-box;
         display: flex;

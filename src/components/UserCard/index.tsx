@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { colors } from 'styles'
 import Title from "../Title";
 import LinkButton from 'components/LinkButton';
-import { User } from 'store/types';
-
+import { User } from 'store/types'
+//@ts-ignore
+import formatCpf from '@brazilian-utils/format-cpf'
 const CardTitle = styled(Title)`
     color: ${colors.darkGray};
     margin: 18px 0;
@@ -51,7 +52,7 @@ const UserCard = ({ user }: Props) => {
     return (!!user ?
         <Container>
             <CardTitle>Cliente Encontrado</CardTitle>
-            <CardCPF>{user.cpf}</CardCPF>
+            <CardCPF>{formatCpf(user.cpf)}</CardCPF>
             <CardName>{user.name}</CardName>
             <LinkButton color="green" to="/overview">Solicitar</LinkButton>
         </Container>

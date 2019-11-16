@@ -44,15 +44,17 @@ interface Props {
     type?: string
     prefix?: string
     defaultValue?: string | number
+    placeholder?: string
 }
 
-const Input = ({ value, onChange, to, type, prefix = "" }: Props) => {
+const Input = ({ value, onChange, placeholder, type, prefix = "" }: Props) => {
     return (
         // @ts-ignore
         <InputWrapper className="input" prefix={prefix}>
             <InputField
                 type={type}
                 value={value}
+                placeholder={placeholder}
                 //@ts-ignore
                 onChange={e => onChange(e.target.value)}
             />

@@ -14,6 +14,10 @@ const LinkButton = styled(Link)`
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    font-weight: bold;
+    //@ts-ignore
+    font-size: ${props => !!props.fontSize ? props.fontSize * 0.14 : 'auto' }rem;
+
 `
 
 export default LinkButton

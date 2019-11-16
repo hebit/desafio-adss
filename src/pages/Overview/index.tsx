@@ -5,8 +5,21 @@ import LinkButton from 'components/LinkButton'
 import { Grid } from 'grommet'
 import Input from 'components/Input'
 import Table from 'components/Table'
+import { useSelector } from 'react-redux';
+import { rootState, Installment } from '../../store/types'
+//@ts-ignore
+import CheckIcon from 'react-ionicons/lib/MdCheckmark'
+
+export function getInitialValue({ fullValue, installmentInterest } : Installment, format = true) {
+    let value : number | string = fullValue/(1+installmentInterest/100)
+    value = value.toFixed(2)
+    return format ? value.replace('.',',') : value
+}
 
 export const Overview: React.FC = () => {
+    const installment = useSelector((state : rootState) => state.installment)
+    const table = useSelector((state : rootState) => state.table)
+
     return (
         <Container>
             <Grid
@@ -24,25 +37,30 @@ export const Overview: React.FC = () => {
             >
                 <Box gridArea="valor-desejado" pad="medium">
                 valor-desejado
-                <Input value="" />
+                <Input value={!!installment ? getInitialValue(installment) : ''} />
                 </Box>
                 <Box gridArea="valor-total" pad="medium">
                 valor-total
-                <Input value="" />
+                <Input value={!!installment ? installment.fullValue.toFixed(2).replace('.',',') : ''} />
                 </Box>
                 <Box gridArea="n-parcelas" pad="medium">
                 parcelas
-                <Input value="" />
+                <Input value={!!installment ? installment.installments : ''} />
                 </Box>
                 <Box gridArea="valor-parcelas" pad="medium">
                 valor-parcelas
-                <Input value="" />
+                <Input value={!!installment ? installment.installmentValue.toFixed(2).replace('.',',') : ''} />
                 </Box>
                 <Box gridArea="concluir-button" transparent noPadding pad="medium">
-                    <LinkButton to="/finish" className="large" color="green">Concluir</LinkButton>
+                    {
+                        //@ts-ignore
+                        <LinkButton fontSize={10} to="/finish" className="large" color="green">
+                            <CheckIcon style={{ margin: 4 }} color="#FFF" /> Concluir
+                        </LinkButton>
+                    }
                 </Box>
             </Grid>
-            <Table />
+            {!!table && <Table table={table} />}
         </Container>
     )
 }

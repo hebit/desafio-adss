@@ -21,13 +21,14 @@ export const Simulacao: React.FC = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        let table = { ...selectedTable, installments: [selectedInstallment]}
-        console.log('SET_TABLE', table)
-        dispatch({ type: 'SET_TABLE', payload: { table } })
+        let installment = selectedInstallment
+        dispatch({ type: 'SET_INSTALLMENT', payload: { installment } })
     },[selectedInstallment])
 
-    // const state = useSelector((state : rootState) => state)
-    // console.log('globa:state',state)
+    useEffect(() => {
+        let table = selectedTable
+        dispatch({ type: 'SET_TABLE', payload: { table } })
+    },[selectedTable])
 
     async function getTable() {
         if(inputValue < 300 || inputValue > 10000){

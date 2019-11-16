@@ -12,8 +12,19 @@ import AlertIcon from 'react-ionicons/lib/MdAlert'
 import CheckIcon from 'react-ionicons/lib/MdCheckmarkCircle'
 import Button from 'components/Button'
 import { colors } from 'styles'
+import { useSelector } from 'react-redux';
+import { rootState } from '../../store/types';
+import { getInitialValue } from '../Overview';
+//@ts-ignore
+import formatCpf from '@brazilian-utils/format-cpf'
 
 export const Details: React.FC = () => {
+    const installment = useSelector((state : rootState) => state.installment)
+    const user = useSelector((state : rootState) => state.user)
+    const table = useSelector((state : rootState) => state.table)
+    if(!installment || !user || !table) {
+        return <Container></Container>
+    }
     return (
         <Container>
             <Grid
@@ -32,21 +43,21 @@ export const Details: React.FC = () => {
                 >
                     <Card.Money 
                         title="Valor total" 
-                        currencyValue={2677.51} 
+                        currencyValue={installment.fullValue} 
                     />
                     <Card.Money 
                         title="Valor a despositar" 
-                        currencyValue={2222.00} 
+                        currencyValue={parseFloat(getInitialValue(installment, false))} 
                     />
                     <Card.Money 
                         title="Percentual do Parceiro" 
-                        currencyValue={2677.51}
-                        percentValue={20.5}
+                        currencyValue={installment.comission}
+                        percentValue={installment.installmentInterest}
                     />
                     <Card.Money 
                         title="Percentual do Representante" 
-                        currencyValue={2677.51}
-                        percentValue={5.5}
+                        currencyValue={installment.installmentInterest}
+                        percentValue={installment.comission}
                     />
                     <Card.File 
                         title="Frente do Cartão"
@@ -75,19 +86,19 @@ export const Details: React.FC = () => {
             <Box transparent direction="column" pad={{ top: '54px' }} height="auto" justify="start">
                 <Card.Info title="Modalidade" textAlign="center" >
                     <Row>Cartão de Credito <CardIcon fontSize="38px" color={colors.orange} /></Row>
-                    <p>Numero do Cartão: 1346546541321546415165465415</p>
+                    <p>Numero do Cartão: {user.bank.accountNumber}</p>
                     <p>validade: 12/22 CVC: 123</p>
-                    <p>2 parcelas de <b>R$1.338,76</b></p>
-                    <p>Tabela: Teste Teste</p>
+                    <p>{installment.installments} parcelas de <b>{installment.installmentValue}</b></p>
+                    <p>Tabela: {table.name}</p>
                 </Card.Info>
 
                 <Card.Info title="Informações do Cliente">
-                    <p>Nome: Caio Moura4</p>
-                    <p>CPF: 023.082.445-50</p>
+                    <p>Nome: {user.name}</p>
+                    <p>CPF: {formatCpf(user.cpf)}</p>
                     <p>Agência: 767662627</p>
-                    <p>Banco 003 - Banco da Amazônia S.A.</p>
+                    <p>{user.bank.label}</p>
                     <p>Tipo da Conta: Conta Corrente</p>
-                    <p>Número da Conta: 1223442</p>
+                    <p>Número da Conta: {user.bank.accountNumber}</p>
                 </Card.Info>
             </Box>
             </Grid>

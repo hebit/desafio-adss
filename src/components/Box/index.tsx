@@ -43,7 +43,7 @@ const Box = styled(GrommetBox)`
 
     .input,
     input {
-        background-color: ${ colors.white }
+        background-color: ${ colors.white };
         width: 180px;
     }
 

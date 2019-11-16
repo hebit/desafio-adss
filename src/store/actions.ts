@@ -1,26 +1,35 @@
-import { User, Table } from './types'
+import { User, Table, Installment } from './types'
 
-export const Types =  {
+export const actionTypes =  {
     SET_USER: 'SET_USER',
-    SET_TABLE: 'SET_TABLE'
+    SET_TABLE: 'SET_TABLE',
+    SET_INSTALLMENT: 'SET_INSTALLMENT',
 }
 
 
 export function setUser(user: User) {
     return {
-        type: Types.SET_USER,
+        type: actionTypes.SET_USER,
         payload: {
             user
         }
     }
 }
 
-
 export function setTable(table: Table) {
     return {
-        type: Types.SET_TABLE,
+        type: actionTypes.SET_TABLE,
         payload: {
             table
+        }
+    }
+}
+
+export function setInstallment(installment: Installment) {
+    return {
+        type: actionTypes.SET_INSTALLMENT,
+        payload: {
+            installment
         }
     }
 }

@@ -4,6 +4,11 @@ body {
     min-height: 100%;
 }
 
+@import './assets/fonts/Flexo/stylesheet';
+
 * {
     box-sizing: border-box;
+    font-family: 'Flexo';
+    color: #777;
 }
+

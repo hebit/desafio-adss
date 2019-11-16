@@ -16,10 +16,12 @@ const TableRow = styled.div`
     grid-template-columns: 0.8fr 1fr 1fr 0.9fr 1.2fr;
     grid-auto-flow: column;
 
-    &.selected {
-        span{
-            background-color: yellow;
-        }
+    &.selected span {
+        background-color: #FFFFAF;
+    }
+
+    &:hover {
+        cursor: pointer;
     }
 `
 
@@ -27,7 +29,7 @@ const Header = styled.div`
     box-sizing: border-box;
     grid-area: table-header;
     padding: 12px 0;
-
+    font-weight: bolder;
     h1 {
         color: ${colors.green};
         margin-bottom: 12px;
