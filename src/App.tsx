@@ -11,10 +11,12 @@ import {
 import Header from './components/Header';
 
 import './App.css'
+import { Provider } from 'react-redux';
+import store from 'store';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <Provider store={store}>
       <Header />
       <Router>
         <Switch>
@@ -26,7 +28,7 @@ const App: React.FC = () => {
           <Route path='/details/:id' component={Details} />
         </Switch>
       </Router>
-    </div>
+    </Provider>
   );
 }
 

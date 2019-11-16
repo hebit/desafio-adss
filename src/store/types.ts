@@ -6,7 +6,7 @@ export interface rootState {
 export interface Table {
     id: number
     name: string
-    installment: Installment[] | Installment
+    installments: Installment[]
 }
 
 export interface Solicitation {

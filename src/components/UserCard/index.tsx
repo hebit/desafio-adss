@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { colors } from 'styles'
 import Title from "../Title";
 import LinkButton from 'components/LinkButton';
+import { User } from 'store/types';
 
 const CardTitle = styled(Title)`
     color: ${colors.darkGray};
@@ -42,21 +43,21 @@ const Container = styled.section`
 `
 
 interface Props {
-    cpf?: string
-    name?: string
-    id?: number
-    children?: any
+    user?: User | null
 }
 
-const Card = ({ cpf , name , id }: Props) => {
-    return (
+const UserCard = ({ user }: Props) => {
+
+    return (!!user ?
         <Container>
             <CardTitle>Cliente Encontrado</CardTitle>
-            <CardCPF>192.023.075-88</CardCPF>
-            <CardName>Jusara Marina Azevedo</CardName>
+            <CardCPF>{user.cpf}</CardCPF>
+            <CardName>{user.name}</CardName>
             <LinkButton color="green" to="/overview">Solicitar</LinkButton>
         </Container>
+        :
+        <></>
     )
 }
 
-export default Card
+export default UserCard

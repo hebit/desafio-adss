@@ -12,6 +12,10 @@ const Container = styled.footer`
     align-items: center;
     justify-content: center;
     color: #F0F0F0;
+
+    span {
+        margin: 0 8px;
+    }
 `
 
 export default Container

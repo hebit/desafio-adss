@@ -3,56 +3,68 @@ import Container from '../../components/Container'
 import Row from '../../components/Row'
 import Title from '../../components/Title'
 import Button from '../../components/Button'
+import LinkButton from 'components/LinkButton'
 import Input from 'components/Input'
 import Table from 'components/Table'
 import Footer from '../../components/Footer'
-import { MaskedInput } from 'grommet'
-// import { useDispatch } from 'react-redux'
-// import CurrencyInput from 'react-currency-masked-input'
+import { Table as TableType, Installment } from 'store/types'
+import { useDispatch, useSelector } from 'react-redux'
+import { rootState } from 'store/types'
+import api from 'api'
+
 export const Simulacao: React.FC = () => {
+    console.log('page:simulacao')
 
-    const [inputValue, setInputValue] = useState(0)
-    if(false){
-        setInputValue(24)
+    const [inputValue, setInputValue] = useState(310)
+    const [selectedTable,setSelectedTable] = useState<TableType|null>(null)
+    const [selectedInstallment,setSelectedInstallment] = useState<Installment|null>(null)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        let table = { ...selectedTable, installments: [selectedInstallment]}
+        console.log('SET_TABLE', table)
+        dispatch({ type: 'SET_TABLE', payload: { table } })
+    },[selectedInstallment])
+
+    // const state = useSelector((state : rootState) => state)
+    // console.log('globa:state',state)
+
+    async function getTable() {
+        if(inputValue < 300 || inputValue > 10000){
+            return alert('os valores devem estar entre R$300 e R$1000')
+        }
+        const table = await api.getTable()
+        if(!!table) {
+            setSelectedTable(table)
+        }
     }
-    console.log(inputValue)
-    // const dispatch =  useDispatch()
-    // useEffect(() => {
-    //     async function get() {
-            
-    //     }
-    //     get()
-    // },[])
-    console.log()
-
     return (
         <>
             <Container>
-                <Title>Valor desejado</Title>
+                <Title size={12}>Valor desejado</Title>
                 <Row>
                     <Input 
                         prefix="R$" 
-                        value={(inputValue).toFixed(2).replace('.',',')}
-                        onChange={ e => {
-                            const value = parseFloat(e.target.value.replace(/\D+/gm, ''))/100
+                        value={inputValue.toFixed(2).replace('.',',')}
+                        onChange={ (strValue : string) => {
+                            const value = parseFloat(strValue.replace(/\D+/gm, ''))/100
                             if(value > 10000) {
                                 return
                             }
                             setInputValue(value)
                         }}
                     />
-                    <Button onClick={async () => {
-                        if(inputValue < 300 || inputValue > 10000){
-                            return alert('os valores devem estar entre R$300 e R$1000')
-                        }
-                        const baseUrl = 'https://3001-f165e84d-1a4f-44b7-b38c-56d96346eb72.ws-us02.gitpod.io/'
-                        const aa = await fetch(`${baseUrl}/rateTable/1`)
-                        console.log(aa)
-                    }} >Calcular</Button>
+                    <Button onClick={getTable} >Calcular</Button>
                 </Row>
-                <Table />
+                {!!selectedTable && 
+                    <Table 
+                        table={selectedTable} 
+                        setSelectedInstallment={(installment : Installment) => setSelectedInstallment(installment)}
+                        selectedInstallment={selectedInstallment}
+                    />
+                }
             </Container>
-            <Footer />
+            <Footer installment={selectedInstallment} table={selectedTable} />
         </>
     )
 }

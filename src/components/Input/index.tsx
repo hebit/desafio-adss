@@ -39,7 +39,7 @@ const InputWrapper = styled.div`
 
 interface Props {
     value?: string | number
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>, value?: string) => void
+    onChange?: (value: string) => void
     to?: string
     type?: string
     prefix?: string
@@ -47,14 +47,6 @@ interface Props {
 }
 
 const Input = ({ value, onChange, to, type, prefix = "" }: Props) => {
-
-    // const [inputValue, setInputValue] = useState('0')
-    // if(false){
-    //     setInputValue("test")
-    // }
-    // console.log(inputValue)
-
-
     return (
         // @ts-ignore
         <InputWrapper className="input" prefix={prefix}>
@@ -62,7 +54,7 @@ const Input = ({ value, onChange, to, type, prefix = "" }: Props) => {
                 type={type}
                 value={value}
                 //@ts-ignore
-                onChange={onChange}
+                onChange={e => onChange(e.target.value)}
             />
         </InputWrapper>)
 }
