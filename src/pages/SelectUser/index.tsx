@@ -23,7 +23,7 @@ export const SelectUser: React.FC = () => {
         let user = selectedUser
         console.log('SET_USER', user)
         dispatch({ type: 'SET_USER', payload: { user } })
-    },[selectedUser])
+    },[selectedUser, dispatch])
 
     async function getUser() {
         const user = await api.getUser(inputValue)

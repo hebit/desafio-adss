@@ -3,13 +3,11 @@ import Container from '../../components/Container'
 import Row from '../../components/Row'
 import Title from '../../components/Title'
 import Button from '../../components/Button'
-import LinkButton from 'components/LinkButton'
 import Input from 'components/Input'
 import Table from 'components/Table'
 import Footer from '../../components/Footer'
 import { Table as TableType, Installment } from 'store/types'
-import { useDispatch, useSelector } from 'react-redux'
-import { rootState } from 'store/types'
+import { useDispatch } from 'react-redux'
 import api from 'api'
 
 export const Simulacao: React.FC = () => {
@@ -23,12 +21,12 @@ export const Simulacao: React.FC = () => {
     useEffect(() => {
         let installment = selectedInstallment
         dispatch({ type: 'SET_INSTALLMENT', payload: { installment } })
-    },[selectedInstallment])
+    },[selectedInstallment, dispatch])
 
     useEffect(() => {
         let table = selectedTable
         dispatch({ type: 'SET_TABLE', payload: { table } })
-    },[selectedTable])
+    },[selectedTable, dispatch])
 
     async function getTable() {
         if(inputValue < 300 || inputValue > 10000){

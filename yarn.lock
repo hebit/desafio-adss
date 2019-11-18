@@ -910,6 +910,24 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@brazilian-utils/format-cpf@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@brazilian-utils/format-cpf/-/format-cpf-0.1.8.tgz#2eaad4999a3d7667ea69481d5cbd8e4168cd28c2"
+  integrity sha512-y+Jhtksc2yVKmVlW70DMuTOuTHQvKXiblcae6Gcn6LoT4yp/+P+I961dYhlXJZtjMGPV/PqisHYb14HXASegzA==
+  dependencies:
+    "@brazilian-utils/helper-is-last-char" "^0.1.7"
+    "@brazilian-utils/helper-only-numbers" "^0.1.5"
+
+"@brazilian-utils/helper-is-last-char@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@brazilian-utils/helper-is-last-char/-/helper-is-last-char-0.1.7.tgz#fc9c89dd46f319f25882d06a2cb73b7d5a01a82f"
+  integrity sha512-40bVIHBII6BqPhkHZYa6AP3sLxiX8/SAvfBWgeIeEF0gaLBe+/L2MoOlWVlJarnKKxikHqDeUafbfaG/Bjl/NQ==
+
+"@brazilian-utils/helper-only-numbers@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@brazilian-utils/helper-only-numbers/-/helper-only-numbers-0.1.5.tgz#ad1a18cf219ecd44d8c2c0ae3f058bcd42e795ab"
+  integrity sha512-nsfHGdDr97n8ech2UwMHgUjw9xGxbc5gyGgmSrvqisOzuBAjRx5LfcL7ZNjEiPe4hldwp6AgaMI6WXKCQ3fOfg==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"

@@ -13,7 +13,7 @@ export async function getTable(id : number = 1) {
 }
 
 export async function getUser(cpf : string) {
-    cpf = cpf.replace(/\.|\-/gm,'')
+    cpf = cpf.replace(/\.|-/gm,'')
     const user : User[] = await fetch(`${baseUrl}/client?cpf=${cpf}`).then(res => res.json())
     return user[0]
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors } from 'styles'
 import Box from 'components/Box'
-import Row from 'components/Row'
 //@ts-ignore
 import IonFileIcon from 'react-ionicons/lib/MdDocument'
 
