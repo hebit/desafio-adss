@@ -1,12 +1,14 @@
 import React from 'react'
-import Box from 'components/Box'
-import Container from 'components/Container'
-import LinkButton from 'components/LinkButton'
 import { Grid } from 'grommet'
-import Input from 'components/Input'
-import Table from 'components/Table'
+import {
+    Box,
+    Container,
+    LinkButton,
+    Input,
+    Table,
+} from 'components'
 import { useSelector } from 'react-redux';
-import { rootState } from '../../store/types'
+import { rootState } from 'store/types'
 //@ts-ignore
 import CheckIcon from 'react-ionicons/lib/MdCheckmark'
 import { getInitialValue } from 'api'

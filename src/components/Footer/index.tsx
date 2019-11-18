@@ -8,7 +8,7 @@ interface Props {
     table: Table | null
 }
 
-const Footer = ({ installment, table } : Props) => {
+export const Footer = ({ installment, table } : Props) => {
     return (
         <Container>
             {!table ?

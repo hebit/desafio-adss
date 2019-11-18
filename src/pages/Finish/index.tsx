@@ -1,10 +1,11 @@
 import React from 'react'
-import Box from 'components/Box'
-import Container from 'components/Container'
-import LinkButton from 'components/LinkButton'
 import { useSelector } from 'react-redux'
+import {
+    Box,
+    Container,
+    LinkButton,
+} from 'components'
 import { rootState } from 'store/types'
-
 import { colors } from 'styles'
 import { getInitialValue } from 'api'
 //@ts-ignore

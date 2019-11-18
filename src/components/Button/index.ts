@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors } from 'styles'
 
-const Button = styled.button`
+export const Button = styled.button`
     height: 32px;
     padding: 4px 12px;
     background-color: ${

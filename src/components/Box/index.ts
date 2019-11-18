@@ -9,7 +9,7 @@ interface ContainerProps extends BoxProps {
     noPadding?: boolean
 }
 
-const Box = styled(GrommetBox)`
+export const Box = styled(GrommetBox)`
     background-color: 
         ${(props : ContainerProps) => 
             !!props.selected ? 

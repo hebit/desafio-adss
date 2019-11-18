@@ -1,15 +1,15 @@
 import React from 'react'
 import { Grid } from 'grommet'
-
-import Container from 'components/Container'
-import Box from 'components/Box'
-import Row from 'components/Row'
-import Card from 'components/Card'
-import Button from 'components/Button'
-
+import {
+    Container,
+    Box,
+    Row,
+    Card,
+    Button,
+} from 'components'
 import { colors } from 'styles'
 import { useSelector } from 'react-redux';
-import { rootState } from '../../store/types';
+import { rootState } from 'store/types';
 import { getInitialValue } from 'api';
 //@ts-ignore
 import CardIcon from 'react-ionicons/lib/MdCard'

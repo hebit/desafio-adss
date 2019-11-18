@@ -107,5 +107,5 @@ export const UserCard = ({ user }: UserCardProps) => {
     )
 }
 
-const Card = { Money: MoneyCard, File: FileCard, Info: InfoCard, User: UserCard }
+export const Card = { Money: MoneyCard, File: FileCard, Info: InfoCard, User: UserCard }
 export default Card

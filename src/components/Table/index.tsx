@@ -10,7 +10,7 @@ interface Props {
     selectedInstallment?: Installment | null
 }
 
-const Table = ({ table, setSelectedInstallment, selectedInstallment } : Props) => {
+export const Table = ({ table, setSelectedInstallment, selectedInstallment } : Props) => {
     const rowLabels = ['Parcela', 'Juros da Parcela', 'Valor Parcela', 'Valor Total', 'Comissão Total']
     return (
         <Container>

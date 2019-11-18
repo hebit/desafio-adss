@@ -6,7 +6,7 @@ import logo from 'assets/img/logo.png'
 import filingIcon from 'assets/img/filing-icon.png'
 import plusIcon from 'assets/img/plus-icon.png'
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
     return (
         <>
             <MenuContainer>

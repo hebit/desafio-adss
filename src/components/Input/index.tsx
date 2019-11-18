@@ -12,7 +12,7 @@ interface Props {
     placeholder?: string
 }
 
-const Input = ({ value, onChange, placeholder, type, prefix = "" }: Props) => {
+export const Input = ({ value, onChange, placeholder, type, prefix = "" }: Props) => {
     return (
         // @ts-ignore
         <InputWrapper className="input" prefix={prefix}>

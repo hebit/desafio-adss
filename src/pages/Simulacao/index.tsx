@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import Container from '../../components/Container'
-import Row from '../../components/Row'
-import Title from '../../components/Title'
-import Button from '../../components/Button'
-import Input from 'components/Input'
-import Table from 'components/Table'
-import Footer from '../../components/Footer'
+import {
+    Container,
+    Row,
+    Title,
+    Button,
+    Input,
+    Table,
+    Footer,
+} from 'components'
 import { Table as TableType, Installment } from 'store/types'
 import { useDispatch } from 'react-redux'
 import api from 'api'

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import Container from '../../components/Container'
-import Row from '../../components/Row'
-import Title from '../../components/Title'
-import Button from '../../components/Button'
-import Input from 'components/Input'
-import Sticky from 'components/Sticky'
-import { UserCard as Card } from 'components/Card'
+import {
+    Container,
+    Row,
+    Title,
+    Button,
+    Input,
+    Sticky,
+    UserCard as Card,
+} from 'components'
 import { useSelector, useDispatch } from 'react-redux'
 import { rootState, User } from 'store/types'
 import api from 'api'

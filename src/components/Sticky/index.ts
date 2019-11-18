@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import Row from '../Row'
 import { colors } from 'styles'
-const Sticky = styled(Row)`
+
+export const Sticky = styled(Row)`
     width: 310px;
     input {
         border-radius: 3px 0 0 3px;

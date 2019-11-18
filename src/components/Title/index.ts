@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Title = styled.h1<{ size?: number, align?: string }>`
+export const Title = styled.h1<{ size?: number, align?: string }>`
     font-size: ${props => !!props.size ? props.size * 0.14 : 1.4 }rem;
     font-weight: bold;
     color: #228A95;
