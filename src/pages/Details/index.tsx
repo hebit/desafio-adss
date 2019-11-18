@@ -1,20 +1,22 @@
 import React from 'react'
+import { Grid } from 'grommet'
+
 import Container from 'components/Container'
 import Box from 'components/Box'
 import Row from 'components/Row'
-import { Grid } from 'grommet'
-import Card from './styles'
+import Card from 'components/Card'
+import Button from 'components/Button'
+
+import { colors } from 'styles'
+import { useSelector } from 'react-redux';
+import { rootState } from '../../store/types';
+import { getInitialValue } from 'api';
 //@ts-ignore
 import CardIcon from 'react-ionicons/lib/MdCard'
 //@ts-ignore
 import AlertIcon from 'react-ionicons/lib/MdAlert'
 //@ts-ignore
 import CheckIcon from 'react-ionicons/lib/MdCheckmarkCircle'
-import Button from 'components/Button'
-import { colors } from 'styles'
-import { useSelector } from 'react-redux';
-import { rootState } from '../../store/types';
-import { getInitialValue } from '../Overview';
 //@ts-ignore
 import formatCpf from '@brazilian-utils/format-cpf'
 

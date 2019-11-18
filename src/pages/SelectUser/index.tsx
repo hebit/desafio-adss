@@ -5,7 +5,7 @@ import Title from '../../components/Title'
 import Button from '../../components/Button'
 import Input from 'components/Input'
 import Sticky from 'components/Sticky'
-import UserCard from 'components/UserCard'
+import { UserCard as Card } from 'components/Card'
 import { useSelector, useDispatch } from 'react-redux'
 import { rootState, User } from 'store/types'
 import api from 'api'
@@ -43,7 +43,7 @@ export const SelectUser: React.FC = () => {
                     <Button color="green" onClick={getUser}>Buscar</Button>
                 </Sticky>
             </Row>
-            {!!selectedUser && <UserCard user={selectedUser} />}
+            {!!selectedUser && <Card user={selectedUser} />}
         </Container>
     )
 }

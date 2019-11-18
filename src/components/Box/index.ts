@@ -3,13 +3,6 @@ import { colors } from 'styles'
 
 import { Box as GrommetBox, BoxProps } from 'grommet'
 
-// const BoxLabel =  styled.span`
-//     font-size: 1rem;
-//     font-weight: bold;
-//     color: ${colors.green};
-//     text-deconration: italic;
-// `
-
 interface ContainerProps extends BoxProps {
     selected?: boolean
     transparent?: boolean
@@ -52,14 +45,5 @@ const Box = styled(GrommetBox)`
         margin: 0 0.5em;
     }
 `
-
-// const Box : = (props: BoxProps) => {
-//     const { gridArea } = props
-//     return (
-//         <BoxContainer gridArea={gridArea}>
-//             <BoxLabel>text</BoxLabel>
-//         </BoxContainer>
-//     )
-// }
 
 export default Box

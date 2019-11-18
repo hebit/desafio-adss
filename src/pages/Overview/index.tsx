@@ -6,15 +6,10 @@ import { Grid } from 'grommet'
 import Input from 'components/Input'
 import Table from 'components/Table'
 import { useSelector } from 'react-redux';
-import { rootState, Installment } from '../../store/types'
+import { rootState } from '../../store/types'
 //@ts-ignore
 import CheckIcon from 'react-ionicons/lib/MdCheckmark'
-
-export function getInitialValue({ fullValue, installmentInterest } : Installment, format = true) {
-    let value : number | string = fullValue/(1+installmentInterest/100)
-    value = value.toFixed(2)
-    return format ? value.replace('.',',') : value
-}
+import { getInitialValue } from 'api'
 
 export const Overview: React.FC = () => {
     const installment = useSelector((state : rootState) => state.installment)

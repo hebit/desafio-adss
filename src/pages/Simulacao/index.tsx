@@ -11,7 +11,6 @@ import { useDispatch } from 'react-redux'
 import api from 'api'
 
 export const Simulacao: React.FC = () => {
-    console.log('page:simulacao')
 
     const [inputValue, setInputValue] = useState(310)
     const [selectedTable,setSelectedTable] = useState<TableType|null>(null)
