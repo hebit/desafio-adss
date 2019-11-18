@@ -9,3 +9,4 @@
 ## Execução
 *   Inicie a aplicação `npm start` e, em outro terminal, inicie o servidor `npm run start:server`
 *   _Have fun!_ :heart:
+*   **dica**: use 99999999999 para encontrar o usuário
