@@ -17,8 +17,8 @@ import store from 'store';
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <Header />
       <Router>
+      <Header />
         <Switch>
           <Route exact path='/' component={Simulacao} />
           <Route path='/selectUser' component={SelectUser} />
