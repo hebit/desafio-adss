@@ -14,7 +14,7 @@ import api from 'api'
 
 export const Simulacao: React.FC = () => {
 
-    const [inputValue, setInputValue] = useState(310)
+    const [inputValue, setInputValue] = useState(0)
     const [selectedTable,setSelectedTable] = useState<TableType|null>(null)
     const [selectedInstallment,setSelectedInstallment] = useState<Installment|null>(null)
     const dispatch = useDispatch()
