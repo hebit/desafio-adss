@@ -13,7 +13,7 @@
     "@types/redux": "^3.6.0",
     "@types/styled-components": "^4.4.0",
     "grommet": "^2.8.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-ionicons": "^3.0.1",
